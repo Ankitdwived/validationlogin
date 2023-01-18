@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="card">
+    <table >
+        <tr><th>ID</th>
+            <th>FirstName</th>
+            <th>lastName</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Password</th>
+            <th>Action</th>
+
+ </tr>
+        <tr *ngFor="let data of alldata ">
+<td>{{data.id}}</td>
+            <td>{{data.fname}}</td>
+            <td>{{data.lname}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.password}}</td>
+        <td><button (click)="delet(data.id)" class="btn btn-success"  type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>&nbsp;
+            <button (click)="onEditResto(data)" class="btn btn-success"  type="button"><i class="fa fa-edit" style="font-size:18px;color:red"></i>
+            </button>
+        </td>
+        </tr>
+    </table></div>
+</div>
+
+
+
+       
+<div *ngIf="showEdit" style="margin-left:30%; margin-top: 10px;background-color:violet;margin-right: 30%; text-align: center;">
+        <div class="modal-body">
+            <div class="jumborton">
+            <form [formGroup]="frm">
+<h3>Update Student Data</h3><hr>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">FirstName</label>
+                <input type="text" formControlName="fname" class="form-control" id="exampleFormControlInput1"placeholder="fname">
+            </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">lastName</label>
+                <input type="email" formControlName="lname" class="form-control" id="exampleFormControlInput1" placeholder="lname">
+              </div>
+             
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Mobile</label>
+                <input type="text"formControlName="mobile" class="form-control" id="exampleFormControlInput1" placeholder="Mobie">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Address</label>
+                <input type="text" formControlName="address" class="form-control" id="exampleFormControlInput1" placeholder="Address">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
+                <input type="text" formControlName="password" class="form-control"  id="exampleFormControlInput1" placeholder="password">
+            </div>
+            <button (click)="update()">Update</button>
+            <button (click)="hidden()">cancel</button>
+              </form></div></div>
+
+              </div>

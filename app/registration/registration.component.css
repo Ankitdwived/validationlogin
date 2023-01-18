@@ -1,0 +1,22 @@
+.card{
+    background-color: white;
+    color: black;
+    width:50%;
+    border-color: blue;
+    margin-top: 20px;
+    margin-left: 20%;
+}
+h2{
+    background-color:deeppink;
+    text-align: center;
+}
+dt{
+    color: black;
+}
+.but{
+    margin-left: 30%;
+}button[disabled]{
+    border: 1px solid #999999;
+    background-color:red;
+    color:black;
+  }

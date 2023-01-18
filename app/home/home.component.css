@@ -1,0 +1,12 @@
+table,  td {
+    border: 1px solid black;
+  }
+  th{
+    border:1px solid black;
+    background-color:grey;
+  }
+  .card{
+    background-color: cyan;
+    margin-top: 20px;
+    
+  }

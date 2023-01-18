@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "fname": " Ankit ",
+      "lname": "Pandey",
+      "mobile": "6268783241",
+      "address": "hyde",
+      "password": "78944"
+    },
+    {
+      "fname": "Ankit",
+      "lname": "Dwivedi",
+      "address": "madhavpur hyd",
+      "mobile": "06268783240",
+      "password": "1111",
+      "id": 2
+    },
+    {
+      "fname": "Ankit",
+      "lname": "Dwivedi",
+      "address": "madhavpur hyd",
+      "mobile": "06268783240",
+      "password": "1Aankitd",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

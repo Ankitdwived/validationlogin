@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <form [formGroup]="frm" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <h2>Student Registration</h2>
+       <hr>
+          <dl>
+
+            <dt>First NAME</dt>
+            <dd><input type="text"  placeholder="First Name" maxlength="12"
+              onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" formControlName="fname" class="form-control"></dd>
+            <dd *ngIf="fname.touched && fname.invalid" class="text-danger" >
+                <div *ngIf="fname.errors?.['required']"> *Fname is required.</div>
+                <div *ngIf="fname.errors?.['maxlength'] || fname.errors?.['minlength']">Minimum 4 char and maximum 12 char</div>
+              </dd>
+
+            <dt>LAST NAME</dt>
+            <dd><input type="text"  placeholder="Last Name" maxlength="12" formControlName="lname" class="form-control"></dd>
+            <dd *ngIf="lname.touched && lname.invalid" class="text-danger" >
+                <div *ngIf="lname.errors?.['required']"> *Lname is required.</div>
+                <div *ngIf="lname.errors?.['maxlength'] || lname.errors?.['minlength']">Minimum 4 char and maximum 12 char</div>
+              </dd>
+
+              <dt>ADDRESS</dt>
+              <dd><input type="text" name="address" maxlength="35" placeholder="Address" formControlName="address" class="form-control"></dd>
+<dd *ngIf="address.touched && address.invalid" class="text-danger" style="color:white">
+                <div *ngIf="address.errors?.['required']">*Address is required.</div>
+                <div *ngIf="address.errors?.['minlength'] || address.errors?.['maxlength']">Minimum 5 Word and maximum 35..</div>
+              </dd>
+
+
+            <dt>MOBILE NUMBER</dt>
+            
+            <dd><input type="text" formControlName="mobile" maxlength="10" placeholder="Enter Telephone Number" (keydown)="phoneKeyDown($event)" class="form-control" >
+            </dd>
+            <dd *ngIf="mobile.touched && mobile.invalid" class="text-danger">
+                <div *ngIf="mobile.errors?.['required']"> *Mobile is required.</div>
+                <div *ngIf="mobile.errors?.['pattern']">Invalid mobile number</div>
+              </dd>
+
+            <dt>PASSWORD</dt>
+            <dd><input type="password" placeholder="Password" formControlName="password" class="form-control"></dd>
+            <dd *ngIf="password.touched && password.invalid" class="text-danger">      
+                          <div *ngIf="password.errors?.['pattern']"> Password must contain at least one number, one uppercase and a lowercase letter 
+                            and at least 8 characters<br>Password cannot contain whitespace</div>
+
+                <div *ngIf="password.errors?.['required']">*Password is required.</div>
+              </dd>
+
+        
+        <button type="submit" [disabled]="frm.invalid" class="but" >Submit</button> <a routerLink="/log" style="color:white">Login?</a></dl>
+      </div>
+    </form>
+</div>
+
+
+
+
+
